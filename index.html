@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Студфест — Рыбалка</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="top-bar">
+    <img class="top-bar-logo" src="assets/logo.svg" alt="Студсовет" />
+    <div class="top-bar-title">Рыбалка предсказаний</div>
+    <div class="top-bar-timer">
+      <i class="fa-solid fa-clock"></i>
+      <span id="timerValue">90</span>
+      <div class="timer-bar"><div class="timer-bar-fill" id="timerFill"></div></div>
+    </div>
+  </header>
+
+  <div id="app">
+
+    <section class="screen" data-screen="MAP">
+      <div class="map-bg" id="mapBg"></div>
+      <div class="map-points" id="mapPoints"></div>
+      <h1 class="map-title">Выбери место рыбалки</h1>
+    </section>
+
+    <section class="screen" data-screen="LOCATION">
+      <div class="location-bg" id="locationBg"></div>
+      <div class="location-overlay">
+        <h2 class="location-name" id="locationName"></h2>
+        <button class="btn-cast" id="btnCast">
+          <i class="fa-solid fa-fish"></i> Ловить
+        </button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="CASTING">
+      <div class="location-bg" id="castingBg"></div>
+      <div class="casting-overlay">
+        <div class="float" id="float">
+          <i class="fa-solid fa-fish"></i>
+        </div>
+        <p class="hint">Ждём поклёвку…</p>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="TIMING">
+      <div class="location-bg" id="timingBg"></div>
+      <div class="screen-content">
+        <h2 class="mini-title">Подсекай!</h2>
+        <p class="mini-sub" id="timingHits">Осталось: 2</p>
+        <div class="timing-bar">
+          <div class="timing-zone" id="timingZone"></div>
+          <div class="timing-cursor" id="timingCursor"></div>
+        </div>
+        <p class="hint">Жми ПРОБЕЛ, когда полоска в зелёной зоне</p>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="FOLLOWING">
+      <div class="location-bg" id="followingBg"></div>
+      <div class="screen-content">
+        <h2 class="mini-title">Не отпускай!</h2>
+        <div class="canvas-wrap">
+          <canvas id="followCanvas"></canvas>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="RESULT">
+      <div class="location-bg" id="resultBg"></div>
+      <div class="confetti-layer" id="confettiLayer"></div>
+      <div class="result-card" id="resultCard">
+        <div class="result-rarity" id="resultRarity"></div>
+        <div class="result-fish" id="resultFish">
+          <i class="fa-solid fa-fish"></i>
+        </div>
+        <div class="result-text" id="resultText"></div>
+        <button class="btn-cast" id="btnAgain">
+          <i class="fa-solid fa-rotate-right"></i> На карту
+        </button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="sound.js"></script>
+  <script src="data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
