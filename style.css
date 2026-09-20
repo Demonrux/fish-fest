@@ -290,11 +290,6 @@ html, body {
   background-position: center;
 }
 
-.screen[data-screen="TIMING"]    .location-bg,
-.screen[data-screen="FOLLOWING"] .location-bg {
-  filter: brightness(0.8) blur(2px);
-}
-
 .location-overlay {
   position: relative;
   display: flex; flex-direction: column;
@@ -333,25 +328,84 @@ html, body {
   50%     { transform: translateY(-12px); }
 }
 
+.screen[data-screen="TIMING"]    .location-bg,
+.screen[data-screen="FOLLOWING"] .location-bg {
+  filter: brightness(0.55) blur(2px);
+}
+
 .timing-bar {
   position: relative;
-  width: min(700px, 90vw);
-  height: 44px;
-  background: var(--c-red-bar-bg);
-  border-radius: 22px;
+  width: min(720px, 90vw);
+  height: 48px;
+  background: var(--c-panel);
+  border-radius: 24px;
   overflow: hidden;
-  border: 2px solid var(--c-red-bar-border);
+  border: 2px solid var(--c-border);
+  box-shadow:
+    inset 0 3px 10px rgba(0, 0, 0, .55),
+    0 8px 24px rgba(0, 0, 0, .4);
 }
+
+.timing-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg,
+      transparent 0,
+      transparent calc(10% - 1px),
+      rgba(255, 255, 255, .05) calc(10% - 1px),
+      rgba(255, 255, 255, .05) 10%
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.timing-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .07), transparent);
+  border-radius: 24px 24px 0 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
 .timing-zone {
-  position: absolute; top: 0; bottom: 0;
-  background: linear-gradient(180deg, var(--c-green), var(--c-green-dark));
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  background: linear-gradient(180deg, var(--c-green) 0%, var(--c-green-dark) 100%);
+  border-radius: 14px;
+  box-shadow:
+    0 0 16px rgba(56, 214, 107, .55),
+    inset 0 1px 0 rgba(255, 255, 255, .35);
+  z-index: 1;
 }
+
 .timing-cursor {
-  position: absolute; top: -4px; bottom: -4px;
-  width: 6px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
   background: var(--c-red);
-  border-radius: 3px;
   box-shadow: 0 0 12px var(--c-red);
+  z-index: 4;
+}
+
+.timing-cursor::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--c-red);
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px var(--c-red);
 }
 
 #followCanvas {

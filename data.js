@@ -31,11 +31,11 @@ const PREDICTIONS = {
 };
 
 const RARITY_CONFIG = {
-  common: { hits: 2, zoneSize: 18, cursorSpeed: 1.1, followRadius: 45, followSpeed: 2, label: 'Обычное',   fishIcon: 'fa-star' },
-  rare:   { hits: 3, zoneSize: 16, cursorSpeed: 1.2, followRadius: 40, followSpeed: 2.3, label: 'Редкое',    fishIcon: 'fa-gem' },
-  epic:   { hits: 4, zoneSize: 14, cursorSpeed: 1.3, followRadius: 35, followSpeed: 2.6, label: 'Эпическое', fishIcon: 'fa-crown' },
+  common: { hits: 2, zoneSize: 15, cursorSpeed: 1.1, followRadius: 40, followSpeed: 2, label: 'Обычное',   fishIcon: 'fa-star' },
+  rare:   { hits: 3, zoneSize: 14, cursorSpeed: 1.2, followRadius: 38, followSpeed: 2.5, label: 'Редкое',    fishIcon: 'fa-gem' },
+  epic:   { hits: 4, zoneSize: 13, cursorSpeed: 1.3, followRadius: 34, followSpeed: 2.7, label: 'Эпическое', fishIcon: 'fa-crown' },
 };
 
-const RARITY_CHANCES = { common: 0.6, rare: 0.3, epic: 0.1 };
+const RARITY_CHANCES = { common: 0.5, rare: 0.35, epic: 0.15 };
 
 const GAME_DURATION_SEC = 90;
