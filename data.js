@@ -1,4 +1,4 @@
-8const LOCATIONS = [
+const LOCATIONS = [
   { id: 'river',  name: 'Яуза',   icon: 'fa-water', bg: 'assets/river.png',x: 5, y: 45, music: 'river' },
   { id: 'pond',   name: 'Измайлово',     icon: 'fa-tree', bg: 'assets/pond.png',x: 70, y: 20, music: 'pond' },
   { id: 'marina', name: 'Лужа на районе', icon: 'fa-shoe-prints',     bg: 'assets/marina.png',x: 76, y: 68, music: 'marina' },
