@@ -1,4 +1,4 @@
-const LOCATIONS = [
+8const LOCATIONS = [
   { id: 'river',  name: 'Яуза',   icon: 'fa-water', bg: 'assets/river.png',x: 5, y: 45, music: 'river' },
   { id: 'pond',   name: 'Измайлово',     icon: 'fa-tree', bg: 'assets/pond.png',x: 70, y: 20, music: 'pond' },
   { id: 'marina', name: 'Лужа на районе', icon: 'fa-shoe-prints',     bg: 'assets/marina.png',x: 76, y: 68, music: 'marina' },
@@ -115,9 +115,9 @@ const PREDICTIONS = {
 };
 
 const RARITY_CONFIG = {
-  common: { hits: 2, zoneSize: 15, cursorSpeed: 1.1, followRadius: 40, followSpeed: 2, label: 'Обычное',   fishIcon: 'fa-star' },
-  rare:   { hits: 3, zoneSize: 14, cursorSpeed: 1.2, followRadius: 38, followSpeed: 2.5, label: 'Редкое',    fishIcon: 'fa-gem' },
-  epic:   { hits: 4, zoneSize: 13, cursorSpeed: 1.3, followRadius: 34, followSpeed: 2.7, label: 'Эпическое', fishIcon: 'fa-crown' },
+  common: { hits: 2, zoneSize: 15, cursorSpeed: 1.1, followRadius: 60, followSpeed: 2, label: 'Обычное',   fishIcon: 'fa-star' },
+  rare:   { hits: 3, zoneSize: 14, cursorSpeed: 1.2, followRadius: 50, followSpeed: 2.5, label: 'Редкое',    fishIcon: 'fa-gem' },
+  epic:   { hits: 4, zoneSize: 13, cursorSpeed: 1.3, followRadius: 45, followSpeed: 2.7, label: 'Эпическое', fishIcon: 'fa-crown' },
 };
 
 const RARITY_CHANCES = { common: 0.5, rare: 0.35, epic: 0.15 };
