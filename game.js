@@ -305,7 +305,7 @@ function followLoop(now) {
   const dist = Math.hypot(dx, dy);
   const inZone = dist < s.target.r;
 
-  s.progress += inZone ? 30 * dt : -25 * dt;
+  s.progress += inZone ? 35 * dt : -10 * dt;
   s.progress = Math.max(0, Math.min(100, s.progress));
 
   if (s.progress <= 0) {
