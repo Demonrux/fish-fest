@@ -418,7 +418,9 @@ function failCatch() {
 
   $('#resultRarity').textContent = 'Сорвалась…';
   $('#resultRarity').className = 'result-rarity';
+  $('#resultFish').className = 'result-fish';
   $('#resultFish').innerHTML = '<i class="fa-solid fa-wind"></i>';
+  $('#resultText').textContent = 'Попробуй ещё раз!';
 
   showScreen('RESULT');
   Sound.fail();
